@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>KCG Programming Club - Gallery</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="css/main.css">
+    <style>
+        .a {
+            cursor: pointer;
+        }
+
+    </style>
+    <script type="text/javascript">
+        function prev() {
+            var mi = document.getElementById("MI");
+            var mc = document.getElementById("MC");
+            var X = mi.src;
+            var i = X.split("/");
+            var c = i[i.length - 1];
+            var f = c.substring(0, c.length - 4);
+            var nl = parseInt(f) - 1;
+            mi.src = nl + ".jpg";
+
+        }
+
+        function next() {
+            var mi = document.getElementById("MI");
+            var mc = document.getElementById("MC");
+            var X = mi.src;
+            var i = X.split("/");
+            var c = i[i.length - 1];
+            var f = c.substring(0, c.length - 4);
+            var nl = parseInt(f) + 1;
+            mi.src = nl + ".jpg";
+        }
+
+        function x(L) {
+            document.getElementById("MI").src = L + ".jpg";
+            document.getElementById("MC").innerHTML = document.getElementById(L).innerHTML;
+        }
+
+    </script>
+    <style>
+        .active {
+            color: white;
+        }
+
+        .form-control {
+            background-color: #232323;
+            text-decoration-color: white;
+            color: white;
+            border: #232323;
+            padding-left: 50px;
+        }
+
+        .glyphicon-search {
+            color: white;
+            padding-left: 40px;
+        }
+
+        .input-group-btn button.btn-default {
+            background-color: #232323;
+            border: black;
+        }
+
+        .input-group-btn button.btn-default:hover {
+            background-color: #232323;
+            color: white;
+        }
+
+        .navbar-nav>li>.dropdown-menu {
+            background-color: #232323;
+        }
+
+        .navbar-nav>li>.dropdown-menu a {
+            color: white;
+            font-size: 15px;
+            border: #232323;
+        }
+
+        .navbar-nav>li>.dropdown-menu a:hover {
+            background-color: black;
+            color: white;
+            padding-top: 3px;
+        }
+
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html">KCG Programming Club</a>
+            </div>
+            <form class="navbar-form navbar-left">
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Search" style="width:600px">
+                    <div class="input-group-btn">
+                        <button class="btn btn-default" type="submit">
+                    <i class="glyphicon glyphicon-search" style="height:20px"></i>
+                  </button>
+                    </div>
+                </div>
+            </form>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav">
+                    <!-- nabar left -->
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="index.html">Home</a></li>
+                    <li class="dropdown ">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="events.html">Events<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="events.html#UE">Upcoming Events</a></li>
+                            <li><a href="events.html#E">Events</a></li>
+                            <li><a href="events.html#EE">External Events</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li class="active"><a href="gallery.html">Gallery</a></li>
+                    <li class="dropdown">
+                        <a href="contact-us.html" class="dropdown-toggle" data-toggle="dropdown" href="#section5" class="page-scroll">Contact Us<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="contact-us.html#section51" class="page-scroll">Address</a></li>
+                            <li><a href="contact-us.html#section52" class="page-scroll">Team</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="jumbotron text-center">
+        <h1>Gallery</h1>
+    </div>
+    <div class="container-fluid ">
+
+        <div class="container ">
+
+            <h3>
+                Event Name
+            </h3>
+            <div class="row">
+                <div class="col-md-4 a">
+                    <div class="thumbnail" data-toggle="modal" data-target="#myModal" onclick="x(1);">
+                        <img src="1.jpg">
+                        <div id="1" class="caption">
+                            <p>Lorem ipsum donec id elit non mi porta gravida at eget metus.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 a">
+                    <div class="thumbnail" data-toggle="modal" data-target="#myModal" onclick="x(2);">
+                        <img src="2.jpg">
+                        <div id="2" class="caption">
+                            <p>Lorem ipsum donec id elit non mi porta gravida at eget metus.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 a">
+                    <div class="thumbnail" data-toggle="modal" data-target="#myModal" onclick="x(3);">
+
+                        <img src="3.jpg">
+                        <div id="3" class="caption">
+                            <p>Lorem ipsum donec id elit non mi porta gravida at eget metus.</p>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-md-4 a">
+                    <div class="thumbnail" data-toggle="modal" data-target="#myModal" onclick="x(3);">
+
+                        <img src="3.jpg">
+                        <div id="3" class="caption">
+                            <p>Lorem ipsum donec id elit non mi porta gravida at eget metus.</p>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <h3>
+                Event Name
+            </h3>
+            <div class="row">
+                <div class="col-md-4 a">
+                    <div class="thumbnail" data-toggle="modal" data-target="#myModal" onclick="x(1);">
+                        <img src="1.jpg">
+                        <div id="1" class="caption">
+                            <p>Lorem ipsum donec id elit non mi porta gravida at eget metus.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 a">
+                    <div class="thumbnail" data-toggle="modal" data-target="#myModal" onclick="x(2);">
+                        <img src="2.jpg">
+                        <div id="2" class="caption">
+                            <p>Lorem ipsum donec id elit non mi porta gravida at eget metus.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 a">
+                    <div class="thumbnail" data-toggle="modal" data-target="#myModal" onclick="x(3);">
+
+                        <img src="3.jpg">
+                        <div id="3" class="caption">
+                            <p>Lorem ipsum donec id elit non mi porta gravida at eget metus.</p>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <h3>
+                Event Name
+            </h3>
+            <div class="row">
+                <div class="col-md-4 a">
+                    <div class="thumbnail" data-toggle="modal" data-target="#myModal" onclick="x(1);">
+                        <img src="1.jpg">
+                        <div id="1" class="caption">
+                            <p>Lorem ipsum donec id elit non mi porta gravida at eget metus.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 a">
+                    <div class="thumbnail" data-toggle="modal" data-target="#myModal" onclick="x(2);">
+                        <img src="2.jpg">
+                        <div id="2" class="caption">
+                            <p>Lorem ipsum donec id elit non mi porta gravida at eget metus.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 a">
+                    <div class="thumbnail" data-toggle="modal" data-target="#myModal" onclick="x(3);">
+
+                        <img src="3.jpg">
+                        <div id="3" class="caption">
+                            <p>Lorem ipsum donec id elit non mi porta gravida at eget metus.</p>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+    <div class="modal fade" id="myModal" role="dialog">
+        <div class="modal-dialog">
+
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Modal Header</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="thumbnail">
+                        <img id="MI" alt="NO image found">
+                        <div class="caption" style="text-align: center;">
+                            <p id="MC"></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+
+                    <button type="button" onclick="prev()" class="btn btn-default" style="float: left;">PREV</button>
+                    <button type="button" onclick="next()" class="btn btn-default" style="float:left;">NEXT</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="container-fluid bg-gray">
+        <div class="container" onclick="alert(x+y);">
+            <p>
+                KCG PROGRAMMING CLUB
+            </p>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>

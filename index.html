@@ -1,0 +1,1001 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>KCG Programming Club</title>
+    <meta charset="utf-8">
+    <link rel="icon" href="images/icon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="node_modules/octicons/build/font/octicons.css">
+    <link rel="stylesheet" href="node_modules/primer-css/build/build.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="css/main.css">
+    <style>
+        html{
+            color: white;
+            background: black;
+        }
+        .body{
+           position: relative;
+        }
+        .body-img{
+          background-image: url("m1.gif");
+          background-size: 1480px 750px;
+          opacity: 1.8;
+         }
+        .form-control {
+            background-color: #232323;
+            text-decoration-color: white;
+            color: white;
+            border: #232323;
+            padding-left: 50px;
+        }
+
+        .glyphicon-search {
+            color: black;
+            padding-left: 40px;
+        }
+
+        .btn-default {
+            background-color: transparent;
+            border: black;
+        }
+
+        .btn-default:hover {
+            background-color: #232323;
+            color: white;
+        }
+
+        .navbar-nav>li>.dropdown-menu {
+            background-color: #232323;
+        }
+
+        .navbar-nav>li>.dropdown-menu a {
+            color: white;
+            font-size: 15px;
+            border: #232323;
+        }
+
+        .navbar-nav>li>.dropdown-menu a:hover {
+            background-color: black;
+            color: white;
+            padding-top: 3px;
+        }
+        .home-b{
+          padding-top: 300px;
+          color:#00FF7F;
+          font-weight: bold;
+        }
+        a.ghost{
+          color:#00FF7F;
+          border: 1px solid #00FF7F;
+          display: inline-block;
+          width: 200px;
+          font-size: 20px;
+          padding: 8px;
+          margin: 10px;
+          text-align: center;
+          text-decoration: none;
+          transition: color 0.3s ease-out,background-color 0.3s ease-out;
+        }
+        a.ghost:hover,a.ghost:focus{
+          background-color: #00FF7F;
+          color:white;
+          transition: color 0.3s ease-in,background-color 0.3s ease-in;
+        }
+        .a {
+            cursor: pointer;
+        }
+        h1,
+        h2 {
+            text-align: center;
+        }
+
+        #gomaps {
+            margin-left: 10px;
+            margin-bottom: 50px;
+        }
+
+        .address {
+            text-align: left;
+            font-size: 16px;
+            font-style: oblique;
+            border: 1px solid #FEFEFE;
+            margin-left: -30px;
+            margin-right: 638px;
+            margin-top: -410px;
+            padding-top: 40px;
+        }
+
+        .padded {
+            border: 1px solid #FEFEFE;
+            background-color: #FEFEFE;
+            padding-top: auto;
+            padding-right: 20px;
+            padding-bottom: 450px;
+            padding-left: 80px;
+        }
+
+        .padded1 {
+            border: 1px solid #FEFEFE;
+            background-color: #FEFEFE;
+            margin-left: 606px;
+            margin-top: 9px;
+        }
+
+        .edited {
+            font-weight: bold;
+            font-style: italic;
+            font: verdana;
+            font-size: 22px;
+        }
+
+        .cont-pad {
+            border: 1px solid #FEFEFE;
+            background-color: #FEFEFE;
+            margin-left: -50px;
+            margin-right: 650px;
+            margin-top: 0px;
+            margin-bottom: auto;
+            padding-top: 0px;
+            padding-bottom: 0px;
+            padding-left: 10px;
+            padding-right: 10px;
+            background-color: #FEFEFE;
+        }
+
+        .name {
+            border: 1px solid #FEFEFE;
+            margin-left: 60px;
+            margin-right: auto;
+            margin-top: -100px;
+            margin-bottom: 20px;
+            font-size: 12px;
+        }
+
+        .img-circle:hover {
+            border: 3px solid #fcac45;
+        }
+
+        .cont-pad2 {
+            border: 1px solid #FEFEFE;
+            margin-left: 680px;
+            margin-top: -82px;
+        }
+
+        .name1 {
+            border: 1px solid #FEFEFE;
+            margin-left: 7px;
+            margin-right: auto;
+            margin-top: -100px;
+            margin-bottom: 20px;
+            font-size: 12px;
+        }
+
+        .cont-pad3 {
+            border: 1px solid #FEFEFE;
+            background-color: #FEFEFE;
+            margin-left: -50px;
+            margin-right: 650px;
+            margin-top: 0px;
+            margin-bottom: auto;
+            padding-top: 0px;
+            padding-bottom: 0px;
+            padding-left: 10px;
+            padding-right: 10px;
+            background-color: #FEFEFE;
+        }
+
+        .name2 {
+            border: 1px solid #FEFEFE;
+            margin-left: -50px;
+            margin-right: auto;
+            margin-top: -100px;
+            margin-bottom: 20px;
+            font-size: 12px;
+        }
+
+        .cont-pad4 {
+            border: 1px solid #FEFEFE;
+            margin-left: 680px;
+            margin-top: -82px;
+        }
+
+        .name3 {
+            border: 1px solid #FEFEFE;
+            margin-left: -60px;
+            margin-right: auto;
+            margin-top: -100px;
+            margin-bottom: 20px;
+            font-size: 12px;
+        }
+
+        .cont-pad5 {
+            border: 1px solid #FEFEFE;
+            background-color: #FEFEFE;
+            margin-left: -50px;
+            margin-right: 650px;
+            margin-top: 0px;
+            margin-bottom: auto;
+            padding-top: 0px;
+            padding-bottom: 0px;
+            padding-left: 10px;
+            padding-right: 10px;
+            background-color: #FEFEFE;
+        }
+
+        .name4 {
+            border: 1px solid #FEFEFE;
+            margin-left: -160px;
+            margin-right: auto;
+            margin-top: -100px;
+            margin-bottom: 20px;
+            font-size: 12px;
+        }
+
+        .cont-pad6 {
+            border: 1px solid #FEFEFE;
+            margin-left: 680px;
+            margin-top: -82px;
+        }
+
+        .name5 {
+            border: 1px solid #FEFEFE;
+            margin-left: -60px;
+            margin-right: auto;
+            margin-top: -100px;
+            margin-bottom: 20px;
+            font-size: 12px;
+        }
+
+        .cont-pad7 {
+            border: 1px solid #FEFEFE;
+            background-color: #FEFEFE;
+            margin-left: -50px;
+            margin-right: 650px;
+            margin-top: 0px;
+            margin-bottom: auto;
+            padding-top: 0px;
+            padding-bottom: 0px;
+            padding-left: 10px;
+            padding-right: 10px;
+            background-color: #FEFEFE;
+        }
+
+        .name6 {
+            border: 1px solid #FEFEFE;
+            margin-left: -240px;
+            margin-right: auto;
+            margin-top: -100px;
+            margin-bottom: 20px;
+            font-size: 12px;
+        }
+
+        .cont-pad8 {
+            border: 1px solid #FEFEFE;
+            margin-left: 680px;
+            margin-top: -82px;
+        }
+
+        .name7 {
+            border: 1px solid #FEFEFE;
+            margin-left: -130px;
+            margin-right: auto;
+            margin-top: -100px;
+            margin-bottom: 20px;
+            font-size: 12px;
+        }
+        .cont-pad9 {
+            border: 1px solid #FEFEFE;
+            background-color: #FEFEFE;
+            margin-left: -50px;
+            margin-right: 540px;
+            margin-top: 0px;
+            margin-bottom: auto;
+            padding-top: 0px;
+            padding-bottom: 0px;
+            padding-left: 10px;
+            padding-right: 10px;
+            background-color: #FEFEFE;
+        }
+        .name8 {
+            border: 1px solid #FEFEFE;
+            margin-left: -240px;
+            margin-right: auto;
+            margin-top: -100px;
+            margin-bottom: 20px;
+            font-size: 12px;
+        }
+
+        .cont-pad10 {
+            border: 1px solid #FEFEFE;
+            margin-left: 680px;
+            margin-top: -82px;
+        }
+        .name9 {
+            border: 1px solid #FEFEFE;
+            margin-left: 10px;
+            margin-right: auto;
+            margin-top: -100px;
+            margin-bottom: 20px;
+            font-size: 12px;
+        }
+
+        hr {
+            display: block;
+            margin-top: 0;
+            margin-bottom: 0;
+            margin-left: 550px;
+            margin-right: 550px;
+            border-width: 2px;
+            border-style: solid;
+            background-color: #fcac45;
+            border-color: #fcac45;
+        }
+
+        .line1 {
+            display: block;
+            margin-top: 0;
+            margin-bottom: 0;
+            margin-left: 590px;
+            margin-right: 590px;
+            border-width: 1px;
+            border-style: none;
+            background-color: #efa64a;
+            border-color: #efa64a;
+        }
+        .glyphicon-earphone{
+          border:1px solid #FEFEFE;
+          margin-left: 80px;
+          font:verdana;
+          font-size: 18px;
+        }
+        .glyphicon-envelope{
+          border:1px solid #FEFEFE;
+          margin-left: 100px;
+          font-size: 20px;
+          font:verdana;
+        }
+        #add,#galmo{
+            display: none;
+        }
+        nav#footer{
+        	background: #000000;
+        	color: #ffffff;
+        	padding: 20px 0 15px 0;
+          border-width:600px;
+
+        }
+        nav#footer .fnav{ vertical-align: middle;}
+        ul.footer-social li{
+        	display: inline-block;
+        	margin-right: 10px;
+        }
+        nav#footer p{
+        	font-size: 12px;
+        	margin-top: 10px;
+        }
+        #footer i.fa {
+        	height: 30px;
+        	width: 30px;
+        	border: 2px solid #8c8c8c;
+        	font-size: 20px;
+        	padding: 4px 5px;
+        	border-radius: 50%;
+        	color: #8c8c8c;
+        	transition: all 0.5s;
+        }
+        #footer i.fa:hover{
+        	background: black;
+        	border-color: #FCAC45;
+        	color: #ffffff;
+        }
+        .fa {
+            padding: 10px;
+            font-size: 10px;
+            width: 28px;
+            text-align: center;
+            text-decoration: none;
+            margin: 5px 2px;
+            border-radius: 190%;
+           }
+        .fa:hover {
+          border: 0.5px solid white;
+          color: white;
+        }
+       .fa-facebook {
+           background: #3B5998;
+           color: white;
+        }
+        .fa-twitter{
+          background: #55ACEE;
+          color: white;
+        }
+        .fa-linkedin {
+          background: #007bb5;
+          color: white;
+        }
+        .icon>svg{
+          width: 32px;
+          height: 32px;
+          vertical-align: middle;
+        }
+        .archives a{
+          color: #737373;
+        }
+        .archives a:hover{
+          color:white;
+          text-decoration: none;
+        }
+        .form-control1 {
+            border: #232323;
+            width: 270px;
+            padding-top: 3px;
+            padding-bottom: 7px;
+            color:#111111;
+            text-align: center;
+            font-style: Constantia;
+            font-size: 16px;
+        }
+        .middle p{
+          color:#737373;
+        }
+        .line hr{
+          border: 0.03px solid white;
+          width: 720px;
+        }
+        .navbar,.form-control{
+          background-color: transparent;
+          background: transparent;
+          border-color: transparent;
+        }
+
+    </style>
+    <script type="text/javascript">
+
+      function change(y)
+            {
+                x=y.concat("1");
+                z=y.concat("2");
+                w=y.concat(".jpg")
+               document.getElementById('tit').innerHTML=document.getElementById(x).innerHTML;
+                 document.getElementById('des').innerHTML=document.getElementById(z).innerHTML;
+                document.getElementById('img').src=w;
+            }
+            function prev() {
+                var mi = document.getElementById("MI");
+                var mc = document.getElementById("MC");
+                var X = mi.src;
+                var i = X.split("/");
+                var c = i[i.length - 1];
+                var f = c.substring(0, c.length - 4);
+                var nl = parseInt(f) - 1;
+                mi.src = nl + ".jpg";
+
+            }
+
+            function next() {
+                var mi = document.getElementById("MI");
+                var mc = document.getElementById("MC");
+                var X = mi.src;
+                var i = X.split("/");
+                var c = i[i.length - 1];
+                var f = c.substring(0, c.length - 4);
+                var nl = parseInt(f) + 1;
+                mi.src = nl + ".jpg";
+            }
+
+            function x(L) {
+                document.getElementById("MI").src = L + ".jpg";
+                document.getElementById("MC").innerHTML = document.getElementById(L).innerHTML;
+            }
+        function app(id, ths){
+           document.getElementById(id).style.display= 'inline';
+            document.getElementById(ths).style.display="none";
+        }
+    </script>
+</head>
+
+<body data-spy="scroll" data-target=".navbar" data-offset="50">
+  <div class="body-img">
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html">KCG Programming Club</a>
+            </div>
+            <form class="navbar-form navbar-left">
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Search" style="width:600px">
+                    <div class="input-group-btn">
+                        <button class="btn btn-default" type="submit">
+                    <i class="glyphicon glyphicon-search" style="height:20px"></i>
+                  </button>
+                    </div>
+                </div>
+            </form>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav">
+                    <!-- nabar left -->
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#home" class="page-scroll">Home</a></li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#EVE" class="page-scroll">Events<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#UE" class="page-scroll">Upcoming Events</a></li>
+                            <li><a href="#EV" class="page-scroll">Events</a></li>
+                            <li><a href="#EE" class="page-scroll">External Events</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#proj" class="page-scroll">Projects</a></li>
+                    <li><a href="#gal" class="page-scroll">Gallery</a></li>
+                    <li class="dropdown">
+                        <a href="contact-us.html" class="dropdown-toggle" data-toggle="dropdown" href="#section5" class="page-scroll">Contact Us<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#Cs" class="page-scroll">Address</a></li>
+                            <li><a href="#co" class="page-scroll">Team</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+<div id="home">
+    <center><div class="home-b"><h1>  K.C.G Programming Club</h1></div>
+      <br> <a class="ghost" href="#UE">Explore</a>
+   </center>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+  </div>
+</div>
+
+
+<!--   Events -->
+
+
+  <div class="jumbotron text-center" >
+  <h3>EVENTS</h3>
+ </div>
+  <div class="container-fluid">
+    <div class="container" id="UE">
+        <h3>Upcoming Events</h3>
+        <div class="row">
+            <div class="col-sm-4" >
+                <div class="panel panel-default" data-toggle="modal" data-target="#myModal" onclick="change('a')">
+                    <div class="panel-heading" id="a1">
+                        Event 1
+                    </div>
+                    <div class="panel-body" id="a2">
+                        Desc e1
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="panel panel-default" data-toggle="modal" data-target="#myModal" onclick="change('b')">
+                    <div class="panel-heading" id="b1">
+                        Event 2
+                    </div>
+                    <div class="panel-body" id="b2">
+                        Desc e2
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="panel panel-default"  data-toggle="modal" data-target="#myModal" onclick="change('c')">
+                    <div class="panel-heading" id="c1">
+                        Event 3
+                    </div>
+                    <div class="panel-body" id="c2">
+                        Desc e3
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button  id="cmo"onclick="app('add','cmo');" style="margin: 5px 45%; width:100px;">See more</button>
+    </div>
+ </div>
+    <div id="add">
+  <div class="container-fluid">
+    <div class="container" id="EV">
+        <h3>
+           Events
+        </h3>
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="panel panel-default"  data-toggle="modal" data-target="#myModal" onclick="change('d')">
+                    <div class="panel-heading" id="d1">
+                        Event 4
+                    </div>
+                    <div class="panel-body" id="d2">
+                        Desc e4
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="panel panel-default"  data-toggle="modal" data-target="#myModal" onclick="change('e')">
+                    <div class="panel-heading" id="e1">
+                        Event 5
+                    </div>
+                    <div class="panel-body" id="e2">
+                       Desc e5
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="panel panel-default"  data-toggle="modal" data-target="#myModal" onclick="change('f')">
+                    <div class="panel-heading" id="f1">
+                        Event 6
+                    </div>
+                    <div class="panel-body" id="f2">
+                       Desc e6
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+ </div>
+  <div class="container-fluid">
+    <div class="container" id="EE">
+        <h3>
+            External Events
+        </h3>
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="panel panel-default"  data-toggle="modal" data-target="#myModal" onclick="change('g')">
+                    <div class="panel-heading" id="g1">
+                        Event 7
+                    </div>
+                    <div class="panel-body" id="g2">
+                       Desc e7
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="panel panel-default"  data-toggle="modal" data-target="#myModal" onclick="change('h')">
+                    <div class="panel-heading" id="h1">
+                        Event 8
+                    </div>
+                    <div class="panel-body" id="h2">
+                       Desc 8
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="panel panel-default" data-toggle="modal" data-target="#myModal" onclick="change('i')">
+                    <div class="panel-heading" id="i1">
+                        Event 9
+                    </div>
+                    <div class="panel-body" id="i2">
+                       Desc e9
+                    </div>
+                </div>
+            </div>
+        </div>
+
+      </div>
+    </div>
+ </div>
+
+  <div class="modal" id="myModal" role="dialog" >
+  <div class="modal-dialog">
+
+   <div class="modal-content" >
+    <div class="modal-header">
+     <button type="button" class="close" data-dismiss="modal">x</button>
+     <h3 class="modal-title" id="tit"></h3>
+    </div>
+   <div class="modal-body">
+      <div class="thumbnail"><img id="img" style="height: 300px; width: 300px"></div>
+      <div  class="caption" style="text-align: center;"><p id="des"></p></div>
+   </div>
+     <div class="modal-footer">
+  </div>
+   </div>
+  </div>
+ </div>
+
+<!-- Project -->
+
+<div class="jumbotron text-center">
+    <h3 id="proj">Projects</h3>
+</div>
+<div class="container-fluid ">
+  <h3>Project name:</h3>
+  <div class="row">
+      <div class="col-md-4 a">
+          <div class="thumbnail" data-toggle="modal" data-target="#myModal" onclick="x(1);">
+              <img src="1.jpg">
+              <div id="1" class="caption">
+                  <p>Lorem ipsum donec id elit non mi porta gravida at eget metus.</p>
+              </div>
+          </div>
+      </div>
+      <div class="col-md-4 a">
+          <div class="thumbnail" data-toggle="modal" data-target="#myModal" onclick="x(2);">
+              <img src="2.jpg">
+              <div id="2" class="caption">
+                  <p>Lorem ipsum donec id elit non mi porta gravida at eget metus.</p>
+              </div>
+          </div>
+      </div>
+      <div class="col-md-4 a">
+          <div class="thumbnail" data-toggle="modal" data-target="#myModal" onclick="x(3);">
+              <img src="3.jpg">
+              <div id="3" class="caption">
+                  <p>Lorem ipsum donec id elit non mi porta gravida at eget metus.</p>
+              </div>
+          </div>
+      </div>
+  </div>
+  <h3>Embedded projects</h3>
+  <center><p>If any project will be embedded here</p></center>
+
+<!-- Gallery -->
+<div class="jumbotron text-center">
+    <h3 id="gal">Gallery</h3>
+</div>
+<div class="container-fluid ">
+
+    <div class="container ">
+
+        <h3>
+            Git & Github WorkShop
+        </h3>
+        <div class="row">
+            <div class="col-md-4 a">
+                <div class="thumbnail" data-toggle="modal" data-target="#myModal2" onclick="x(1);">
+                    <img src="1.jpg">
+                    <div id="1" class="caption">
+                        <p>Lorem ipsum donec id elit non mi porta gravida at eget metus.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 a">
+                <div class="thumbnail" data-toggle="modal" data-target="#myModal2" onclick="x(2);">
+                    <img src="2.jpg">
+                    <div id="2" class="caption">
+                        <p>Lorem ipsum donec id elit non mi porta gravida at eget metus.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 a">
+                <div class="thumbnail" data-toggle="modal" data-target="#myModal2" onclick="x(3);">
+
+                    <img src="3.jpg">
+                    <div id="3" class="caption">
+                        <p>Lorem ipsum donec id elit non mi porta gravida at eget metus.</p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+            <button  id="cmo2"onclick="app('galmo','cmo2');" style="margin: 5px 45%; width:100px;">See more</button>
+        <div id="galmo">
+        <div class="row">
+            <div class="col-md-4 a">
+                <div class="thumbnail" data-toggle="modal" data-target="#myModal2" onclick="x(1);">
+                    <img src="4.jpg">
+                    <div id="1" class="caption">
+                        <p>Lorem ipsum donec id elit non mi porta gravida at eget metus.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 a">
+                <div class="thumbnail" data-toggle="modal" data-target="#myModal2" onclick="x(2);">
+                    <img src="5.jpg">
+                    <div id="2" class="caption">
+                        <p>Lorem ipsum donec id elit non mi porta gravida at eget metus.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 a">
+                <div class="thumbnail" data-toggle="modal" data-target="#myModal2" onclick="x(3);">
+
+                    <img src="7.jpg">
+                    <div id="3" class="caption">
+                        <p>Lorem ipsum donec id elit non mi porta gravida at eget metus.</p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <h3>
+            Event Name
+        </h3>
+        <div class="row">
+            <div class="col-md-4 a">
+                <div class="thumbnail" data-toggle="modal" data-target="#myModal2" onclick="x(1);">
+                    <img src="1.jpg">
+                    <div id="1" class="caption">
+                        <p>Lorem ipsum donec id elit non mi porta gravida at eget metus.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 a">
+                <div class="thumbnail" data-toggle="modal" data-target="#myModal2" onclick="x(2);">
+                    <img src="2.jpg">
+                    <div id="2" class="caption">
+                        <p>Lorem ipsum donec id elit non mi porta gravida at eget metus.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 a">
+                <div class="thumbnail" data-toggle="modal" data-target="#myModal2" onclick="x(3);">
+
+                    <img src="3.jpg">
+                    <div id="3" class="caption">
+                        <p>Lorem ipsum donec id elit non mi porta gravida at eget metus.</p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+</div>
+
+    </div>
+</div>
+<div class="modal fade" id="myModal2" role="dialog">
+    <div class="modal-dialog">
+
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Github WorkShop</h4>
+            </div>
+            <div class="modal-body">
+                <div class="thumbnail">
+                    <img id="MI" alt="NO image found">
+                    <div class="caption" style="text-align: center;">
+                        <p id="MC"></p>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+
+                <button type="button" onclick="prev()" class="btn btn-default" style="float: left;">PREV</button>
+                <button type="button" onclick="next()" class="btn btn-default" style="float:left;">NEXT</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Contact-US-->
+ <br><br>
+ <div class="padded" id="Cs">
+        <h1 id="section5">Contact-Us:</h1>
+        <hr><br>
+        <div class="line1">
+            <hr>
+        </div><br>
+        <h2 id="section51">Address:</h2>
+        <hr><br><br>
+        <div class="padded1">
+            <div id="gomaps">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.7721751767117!2d80.23890631420032!3d12.922359219454684!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a525c8cd40b76e7%3A0x681487984b55f7bb!2sKCG+College+of+Technology!5e0!3m2!1sen!2sin!4v1508160923091" width="585" height="360" frameborder="0" style="border:0;"></iframe>
+            </div>
+        </div>
+        <div class="address">
+            <center><img src="hashINCF-1.jpg" alt="club0-logo" style="width:160px;height:150px;"></center>
+            <p>
+                <center><br>
+                    <div class="edited">K.C.G Programming Club</div>
+                </center><br>K.C.G College of Technology,KCG Nagar, Rajiv Gandhi Salai,Karapakkam,Chennai,<br>
+                <center>Tamil Nadu-600097.</center>
+            </p>
+            <span class="glyphicon glyphicon-earphone"> 91-1234567890</span><span class="glyphicon glyphicon-envelope">pckcg@kcgcollge.com</span>
+        </div><br><br><br><br><br><br>
+        <h1 id="section52">Our Team</h1>
+        <hr><br>
+        <div class="line1">
+            <hr>
+        </div><br><br>
+        <h2>Staff Coordinators</h2>
+        <hr><br><br>
+        <div class="cont-pad">
+            <img src="3.jpg" alt="soumya-mam" class="img-circle" width="120px" height="105px">
+            <div class="name">
+                <h2>Ms.Soumya Somasundaram</h2>
+            </div>
+        </div>
+        <div class="cont-pad2">
+            <img src="3.jpg" alt="minju-mam" class="img-circle" width="120px" height="105px">
+            <div class="name1">
+                <h2>Ms.Minju.P.Thomas</h2>
+            </div>
+        </div>
+        <br><br>
+        <h2 id="co">Student Coordinators</h2>
+        <hr><br><br>
+        <div class="cont-pad3">
+            <img src="bala2.jpg" alt="Bala" class="img-circle" width="120px" height="105px">
+            <div class="name2">
+                <h2>Balasubramaniam T</h2>
+            </div>
+        </div>
+        <div class="cont-pad4">
+            <img src="3.jpg" alt="sid" class="img-circle" width="120px" height="105px">
+            <div class="name3">
+                <h2>Siddarth N.A</h2>
+            </div>
+        </div>
+        <br><br><br>
+        <div class="cont-pad5">
+            <img src="sam.jpg" alt="sam" class="img-circle" width="120px" height="105px">
+            <div class="name4">
+                <h2>Infant Sam</h2>
+            </div>
+        </div>
+        <div class="cont-pad6">
+            <img src="jugal.jpg" alt="jugal" class="img-circle" width="120px" height="105px">
+            <div class="name5">
+                <h2>Jugal Shiva</h2>
+            </div>
+        </div>
+        <br><br><br>
+        <div class="cont-pad7">
+            <img src="3.jpg" alt="alen" class="img-circle" width="120px" height="105px">
+            <div class="name6">
+                <h2>Alen</h2>
+            </div>
+        </div>
+        <div class="cont-pad8">
+            <img src="3.jpg" alt="Pooja" class="img-circle" width="120px" height="105px">
+            <div class="name7">
+                <h2>Pooja</h2>
+            </div>
+        </div>
+        <br><br><br>
+        <div class="cont-pad9">
+            <img src="karthik.jpg" alt="Karthik Raj" class="img-circle" width="120px" height="105px">
+            <div class="name8">
+                <h2>Karthik Raj</h2>
+            </div>
+        </div>
+        <div class="cont-pad10">
+            <img src="ashwath2.jpg" alt="Ashwath Sridhar" class="img-circle" width="120px" height="105px">
+            <div class="name9">
+                <h2>Ashwath Sridhar</h2>
+            </div>
+        </div>
+    </div>
+
+<!-- footer -->
+<nav id="footer">
+    <div class="container">
+        <div class="pull-left fnav">
+         <h3>Archives</h3>
+           <div class="archives">
+            <a href="#">Archives2017</a>
+            <br><a href="#">Archives2016</a></div>
+        </div>
+        <div class="pull-right fnav">
+           <h3>Follow Us</h3>
+           <a href="#" class="fa fa-facebook"></a>
+           <a href="#" class="fa fa-twitter"></a>
+           <a href="#" class="fa fa-linkedin"></a>
+           <a href="#"><span class="icon icon--github">
+           <svg viewBox="0 0 16 16"><path fill="#828282" d="M7.999,0.431c-4.285,0-7.76,3.474-7.76,7.761 c0,3.428,2.223,6.337,5.307,7.363c0.388,0.071,0.53-0.168,0.53-0.374c0-0.184-0.007-0.672-0.01-1.32 c-2.159,0.469-2.614-1.04-2.614-1.04c-0.353-0.896-0.862-1.135-0.862-1.135c-0.705-0.481,0.053-0.472,0.053-0.472 c0.779,0.055,1.189,0.8,1.189,0.8c0.692,1.186,1.816,0.843,2.258,0.645c0.071-0.502,0.271-0.843,0.493-1.037 C4.86,11.425,3.049,10.76,3.049,7.786c0-0.847,0.302-1.54,0.799-2.082C3.768,5.507,3.501,4.718,3.924,3.65 c0,0,0.652-0.209,2.134,0.796C6.677,4.273,7.34,4.187,8,4.184c0.659,0.003,1.323,0.089,1.943,0.261 c1.482-1.004,2.132-0.796,2.132-0.796c0.423,1.068,0.157,1.857,0.077,2.054c0.497,0.542,0.798,1.235,0.798,2.082 c0,2.981-1.814,3.637-3.543,3.829c0.279,0.24,0.527,0.713,0.527,1.437c0,1.037-0.01,1.874-0.01,2.129 c0,0.208,0.14,0.449,0.534,0.373c3.081-1.028,5.302-3.935,5.302-7.362C15.76,3.906,12.285,0.431,7.999,0.431z"></path></svg>
+         </span></a>
+        </div>
+        <div class="middle">
+          <center><h3>Subscribe</h3>
+          <p>Stay tuned to get the latest Update about Programming Events</p></center>
+          <center>
+            <input type="text" class="form-control1" placeholder="Enter your Email" width="1000px"><button type="button" class="btn btn-danger">Subscribe</button>
+          </center>
+          <br><div class="line"><hr></div><br>
+        </div>
+    </div>
+</nav>
+</body>
+</html>
